@@ -1,0 +1,337 @@
+/* =========================================
+   RESET
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* =========================================
+   ROOT VARIABLES
+========================================= */
+:root {
+  --background: #f5f5f7;
+  --card: #ffffff;
+  --text: #171717;
+  --muted: #737373;
+  --border: #e5e5e5;
+  --primary: #e85d04;
+  --primary-dark: #c94d00;
+  --soft-primary: #fff1e8;
+  --success: #16803c;
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+/* =========================================
+   BODY
+========================================= */
+body {
+  min-height: 100vh;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background: var(--background);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+/* =========================================
+   MAIN APP
+========================================= */
+.app {
+  width: 100%;
+  max-width: 850px;
+}
+/* =========================================
+   HEADER
+========================================= */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.eyebrow {
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+}
+.header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.subtitle {
+  color: var(--muted);
+  font-size: 1rem;
+}
+/* =========================================
+   TIMER CARD
+========================================= */
+.timer-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 45px 30px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.session-type {
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 15px;
+}
+/* =========================================
+   TIMER
+========================================= */
+.timer {
+  font-size: clamp(5rem, 18vw, 10rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 35px;
+}
+/* =========================================
+   PROGRESS BAR
+========================================= */
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background: #eeeeee;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 35px;
+}
+.progress-bar {
+  width: 100%;
+  height: 100%;
+  background: var(--primary);
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+/* =========================================
+   BUTTONS
+========================================= */
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+  font-family: inherit;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn:focus-visible {
+  outline: 3px solid rgba(232, 93, 4, 0.35);
+  outline-offset: 3px;
+}
+.primary-btn {
+  background: var(--primary);
+  color: white;
+  min-width: 130px;
+}
+.primary-btn:hover {
+  background: var(--primary-dark);
+}
+.secondary-btn {
+  background: #eeeeee;
+  color: var(--text);
+}
+.secondary-btn:hover {
+  background: #e2e2e2;
+}
+/* =========================================
+   SESSION COUNTER
+========================================= */
+.session-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.session-counter strong {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--soft-primary);
+  color: var(--primary);
+  border-radius: 50%;
+  font-size: 0.9rem;
+}
+/* =========================================
+   SETTINGS
+========================================= */
+.settings-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 30px;
+  margin-top: 20px;
+}
+.settings-heading {
+  margin-bottom: 25px;
+}
+.settings-heading h2 {
+  font-size: 1.4rem;
+}
+/* =========================================
+   SETTINGS GRID
+========================================= */
+.settings-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, 1fr);
+  gap: 20px;
+}
+.setting {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.setting label {
+  font-weight: 700;
+}
+.setting small {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+/* =========================================
+   NUMBER INPUT
+========================================= */
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background: #fafafa;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding-right: 12px;
+}
+.input-wrapper input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+.input-wrapper span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+/* =========================================
+   SETTINGS BUTTON
+========================================= */
+.settings-btn {
+  width: 100%;
+  background: var(--text);
+  color: white;
+  margin-top: 25px;
+}
+.settings-btn:hover {
+  background: #333333;
+}
+.settings-message {
+  text-align: center;
+  color: var(--success);
+  font-size: 0.85rem;
+  margin-top: 12px;
+  min-height: 20px;
+}
+/* =========================================
+   INFO CARD
+========================================= */
+.info-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.info-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.info-number {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+.info-label {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.divider {
+  width: 1px;
+  height: 35px;
+  background: var(--border);
+}
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+@media (max-width: 650px) {
+  body {
+    padding: 25px 15px;
+  }
+  .timer-card {
+    padding: 35px 20px;
+  }
+  .timer {
+    font-size: clamp(4.5rem, 24vw, 7rem);
+  }
+  .settings-grid {
+    grid-template-columns: 1fr;
+  }
+  .info-card {
+    gap: 15px;
+  }
+  .info-number {
+    font-size: 1.1rem;
+  }
+  .info-label {
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 400px) {
+  .timer-controls {
+    flex-direction: column;
+  }
+  .btn {
+    width: 100%;
+  }
+  .info-card {
+    flex-direction: column;
+  }
+  .divider {
+    width: 60%;
+    height: 1px;
+  }
+}

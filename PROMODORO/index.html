@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Makes the website responsive on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer</title>
+  <!-- CSS file -->
+  <link rel="stylesheet" href="promo.css">
+</head>
+<body>
+  <main class="app">
+    <!-- Header -->
+    <header class="header">
+      <p class="eyebrow">PRODUCTIVITY TIMER</p>
+      <h1>Pomodoro Timer</h1>
+      <p class="subtitle">
+        Focus on your work, then take a proper break.
+      </p>
+    </header>
+    <!-- Main Timer Card -->
+    <section class="timer-card" aria-labelledby="session-type">
+      <!-- Current session -->
+      <p id="session-type" class="session-type">
+        Work
+      </p>
+      <!-- Timer -->
+      <div
+        id="timer"
+        class="timer"
+        role="timer"
+        aria-live="off"
+        aria-label="25 minutes remaining"
+      >
+        25:00
+      </div>
+      <!-- Progress bar -->
+      <div
+        class="progress-container"
+        aria-hidden="true"
+      >
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+      <!-- Timer Controls -->
+      <div class="timer-controls">
+        <button
+          id="start-btn"
+          class="btn primary-btn"
+          type="button"
+        >
+          Start
+        </button>
+        <button
+          id="reset-btn"
+          class="btn secondary-btn"
+          type="button"
+        >
+          Reset
+        </button>
+      </div>
+      <!-- Session count -->
+      <div class="session-counter">
+        <span>Work sessions completed</span>
+        <strong id="session-count">0</strong>
+      </div>
+    </section>
+    <!-- Settings -->
+    <section class="settings-card" aria-labelledby="settings-title">
+      <div class="settings-heading">
+        <div>
+          <p class="eyebrow">CUSTOMIZE</p>
+          <h2 id="settings-title">Timer Settings</h2>
+        </div>
+      </div>
+      <div class="settings-grid">
+        <!-- Work duration -->
+        <div class="setting">
+          <label for="work-duration">
+            Work
+          </label>
+          <div class="input-wrapper">
+            <input
+              id="work-duration"
+              type="number"
+              min="1"
+              max="120"
+              value="25"
+              aria-describedby="work-help"
+            >
+            <span>min</span>
+          </div>
+          <small id="work-help">
+            Default: 25 minutes
+          </small>
+        </div>
+        <!-- Short break -->
+        <div class="setting">
+          <label for="short-break">
+            Short Break
+          </label>
+          <div class="input-wrapper">
+            <input
+              id="short-break"
+              type="number"
+              min="1"
+              max="60"
+              value="5"
+              aria-describedby="short-help"
+            >
+            <span>min</span>
+          </div>
+          <small id="short-help">
+            Default: 5 minutes
+          </small>
+        </div>
+        <!-- Long break -->
+        <div class="setting">
+          <label for="long-break">
+            Long Break
+          </label>
+          <div class="input-wrapper">
+            <input
+              id="long-break"
+              type="number"
+              min="1"
+              max="90"
+              value="15"
+              aria-describedby="long-help"
+            >
+            <span>min</span>
+          </div>
+          <small id="long-help">
+            After 4 work sessions
+          </small>
+        </div>
+      </div>
+      <button
+        id="apply-settings"
+        class="btn settings-btn"
+        type="button"
+      >
+        Apply Settings
+      </button>
+      <p
+        id="settings-message"
+        class="settings-message"
+        role="status"
+        aria-live="polite"
+      ></p>
+    </section>
+    <!-- Session information -->
+    <section class="info-card">
+      <div class="info-item">
+        <span class="info-number">25</span>
+        <span class="info-label">Work minutes</span>
+      </div>
+      <div class="divider"></div>
+      <div class="info-item">
+        <span class="info-number">5</span>
+        <span class="info-label">Short break</span>
+      </div>
+      <div class="divider"></div>
+      <div class="info-item">
+        <span class="info-number">15</span>
+        <span class="info-label">Long break</span>
+      </div>
+    </section>
+  </main>
+  <!-- JavaScript file -->
+  <script src="promo.js"></script>
+</body>
+</html>
